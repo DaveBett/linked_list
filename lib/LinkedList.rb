@@ -28,4 +28,8 @@ class LinkedList
   def size()
     return @size
   end
+
+  def head()
+    return @head
+  end
 end
