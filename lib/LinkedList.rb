@@ -32,4 +32,8 @@ class LinkedList
   def head()
     return @head
   end
+
+  def tail()
+    return @tail
+  end
 end

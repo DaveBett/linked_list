@@ -9,3 +9,4 @@ list.prepend(1)
 p list
 puts list.size
 puts list.head
+puts list.tail
