@@ -26,14 +26,25 @@ class LinkedList
   end
 
   def size()
-    return @size
+    @size
   end
 
   def head()
-    return @head
+    @head.value
   end
 
   def tail()
-    return @tail
+    @tail.value
+  end
+
+  def at(index)
+    return "Index not found" if index >= size
+    current_index = 0
+    current_node = @head
+    while current_index <= index
+      return current_node.value if current_index == index
+      current_index += 1
+      current_node = current_node.next_node
+    end
   end
 end
