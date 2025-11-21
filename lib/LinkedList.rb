@@ -1,7 +1,5 @@
 require_relative "Node"
 
-attr_accessor :head, :tail
-
 class LinkedList
 
   def initialize()
@@ -20,6 +18,7 @@ class LinkedList
   end
 
   def prepend(value)
-    
+    return self.append(value) if @tail == nil
+    @head = Node.new(value, @head)
   end
 end
