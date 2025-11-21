@@ -5,6 +5,7 @@ class LinkedList
   def initialize()
     @head = nil
     @tail = nil
+    @size = 0
   end
 
   def append(value)
@@ -15,10 +16,16 @@ class LinkedList
       @tail = Node.new(value)
       @head.next_node = @tail
     end
+    @size += 1
   end
 
   def prepend(value)
     return self.append(value) if @tail == nil
     @head = Node.new(value, @head)
+    @size += 1
+  end
+
+  def size()
+    return @size
   end
 end
