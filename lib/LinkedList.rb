@@ -1,3 +1,5 @@
+require 'pry'
+require 'pry-byebug'
 require_relative "Node"
 
 class LinkedList
@@ -13,8 +15,9 @@ class LinkedList
       @head = Node.new(value)
       @tail = @head
     else
+      old_tail = @tail
       @tail = Node.new(value)
-      @head.next_node = @tail
+      old_tail.next_node = @tail
     end
     @size += 1
   end
@@ -39,12 +42,26 @@ class LinkedList
 
   def at(index)
     return "Index not found" if index >= size
+    index = index + @size if index < 0 
     current_index = 0
     current_node = @head
     while current_index <= index
-      return current_node.value if current_index == index
+      return current_node if current_index == index
       current_index += 1
       current_node = current_node.next_node
     end
+  end
+
+  def pop()
+    return nil if @head.nil?
+    popped = @tail
+    if @size == 1
+      @head = nil
+    else
+      @tail = self.at((@size - 2))
+      @tail.next_node = nil
+    end
+    @size -= 1
+    p popped.value
   end
 end
