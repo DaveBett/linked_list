@@ -8,3 +8,6 @@ list.prepend("Ant")
 
 list.contains?("Cat")
 list.contains?("Dragon")
+
+list.find("Cat")
+list.find("Elephant")
