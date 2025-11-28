@@ -62,6 +62,19 @@ class LinkedList
       @tail.next_node = nil
     end
     @size -= 1
-    p popped.value
+    popped.value
   end
+
+  def contains?(value)
+    index = 0
+    current_node = @head
+    while index < @size
+      return true if current_node.value == value
+        index += 1
+        current_node = current_node.next_node
+    end
+    return false
+  end
+
+
 end

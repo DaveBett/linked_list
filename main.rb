@@ -6,7 +6,5 @@ list.append("Cat")
 
 list.prepend("Ant")
 
-puts list.at(1)
-
-list.append("Balloon")
-list.pop
+list.contains?("Cat")
+list.contains?("Dragon")
