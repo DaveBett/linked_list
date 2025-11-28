@@ -115,5 +115,12 @@ class LinkedList
     @size += 1
   end
 
-
+  def remove_at(index)
+    if index == 0
+      @head = @head.next_node
+    end
+    return puts "Index too large" if index >= @size
+    self.at(index - 1).next_node = self.at(index + 1)
+    @size -= 1
+  end
 end

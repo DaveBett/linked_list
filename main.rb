@@ -15,3 +15,6 @@ list.find("Elephant")
 list.insert_at("Sheep", 2)
 
 p list.to_s
+
+list.remove_at(2)
+p list.to_s
