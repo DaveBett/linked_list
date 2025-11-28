@@ -87,5 +87,18 @@ class LinkedList
     return nil
   end
 
+  def to_s
+    current_index = 0
+    current_node = @head
+    string = ""
+    while current_index < @size
+      string += "(#{current_node.value}) -> "
+      current_index += 1
+      current_node = current_node.next_node
+    end
+    string += "nil"
+    return string
+  end
+
 
 end

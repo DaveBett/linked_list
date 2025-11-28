@@ -11,3 +11,5 @@ list.contains?("Dragon")
 
 list.find("Cat")
 list.find("Elephant")
+
+puts list.to_s
