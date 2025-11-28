@@ -101,4 +101,19 @@ class LinkedList
   end
 
 
+  # Extra credits
+    
+  def insert_at(value, index)
+    self.append(value) if index > @size
+    self.prepend(value) if index == 0
+
+    old_node = self.at(index)
+
+    new_node = Node.new(value, self.at(index))
+    new_node.next_node = old_node
+    self.at(index - 1).next_node = new_node
+    @size += 1
+  end
+
+
 end

@@ -12,4 +12,6 @@ list.contains?("Dragon")
 list.find("Cat")
 list.find("Elephant")
 
-puts list.to_s
+list.insert_at("Sheep", 2)
+
+p list.to_s
